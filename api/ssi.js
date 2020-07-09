@@ -2,7 +2,7 @@ const { readFile } = require('fs').promises
 const { join } = require('path');
 const fetch = require('node-fetch');
 
-const root = './public/';
+const root = './not-public/';
 
 module.exports = async (request, response) => {
   const { path } = request.query;
