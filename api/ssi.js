@@ -26,7 +26,7 @@ module.exports = async (request, response) => {
         const type = params[1];
         const value = params[2];
         if (type === 'file') {
-          response.write(await readFile(join(value), 'utf8'));
+          response.write(await readFile(join(root, value), 'utf8'));
         } else if (type === 'virtual') {
           // fetch.
           const fetchResponse = await fetch(new URL(value, `${proto}://${host}`));
