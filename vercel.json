@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
       "source": "((?!/api/).+)",
       "destination": "/api/ssi.js?path=$1"
     }
