@@ -5,6 +5,11 @@
       "destination": "/api/ssi.js?path=$1"
     }
   ],
+  "functions": {
+    "api/ssi.js": {
+      "includeFiles": "not-public/**"
+    }
+  },
   "headers": [
     {
       "source": "((?!/api/).+)",

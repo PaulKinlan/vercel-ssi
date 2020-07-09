@@ -13,7 +13,7 @@ module.exports = async (request, response) => {
   console.log(request.headers)
   // Vercel doesn't support streaming so right now just read into the buffer.
   try {
-    const file = await readFile(join(root, path), 'utf8');
+    const file = await readFile(join(__dirname, root, path), 'utf8');
     let regexp = /<!--#include(.+)-->/g;
     let index = 0;
     while ((match = regexp.exec(file)) !== null) {
@@ -26,7 +26,7 @@ module.exports = async (request, response) => {
         const type = params[1];
         const value = params[2];
         if (type === 'file') {
-          response.write(await readFile(join('.', value), 'utf8'));
+          response.write(await readFile(join(__dirname, value), 'utf8'));
         } else if (type === 'virtual') {
           // fetch.
           const fetchResponse = await fetch(new URL(value, `${proto}://${host}`));
