@@ -1,9 +1,9 @@
 'Simulates' Apaches `mod_include` for Vercel.
 ===============================
 
-* <!--#include file="test.txt"-->
+* <!--#include file="test.txt" -->
 
-* <!--#include virtual="/api/time.js"-->
+* <!--#include virtual="/api/time.js" -->
 
 Why?
 ----
