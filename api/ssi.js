@@ -9,8 +9,6 @@ module.exports = async (request, response) => {
   const host = request.headers['x-forwarded-host'];
   const proto = request.headers['x-forwarded-proto'];
 
-  console.log(path)
-  console.log(request.headers)
   // Vercel doesn't support streaming so right now just read into the buffer.
   try {
     const file = await readFile(join(root, path), 'utf8');
